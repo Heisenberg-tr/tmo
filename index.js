@@ -1,4 +1,26 @@
 var ipadress
+var selectedGroup = 0x0
+var sGroupButton
+var oGroupButton
+
+
+function switchToSGroup(){
+    if(selectedGroup==0x0){
+        return
+    }
+    sGroupButton.classList.add("active-button")
+    oGroupButton.classList.remove("active-button")
+    selectedGroup = 0x0
+}
+
+function switchToOGroup(){
+    if(selectedGroup==0x1){
+        return
+    }
+    oGroupButton.classList.add("active-button")
+    sGroupButton.classList.remove("active-button")
+    selectedGroup = 0x1
+}
 
 
 
@@ -39,4 +61,6 @@ window.onload = function(){
         location.reload()
     }
     getIPs().then(res => ipadress = res)
+    sGroupButton = document.getElementById("sgroup")
+    oGroupButton = document.getElementById("ogroup")
 }
